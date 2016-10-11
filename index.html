@@ -19,7 +19,7 @@
   </header>
   <section class="input-container">
     <article>
-      <input type="text" name="male_name" placeholder="Male Name" ng-model="male_name" />
+      <input type="text" name="male_name_input"  placeholder="Male Name" ng-model="male_name" />
       <input type="text" name="job_title" placeholder="Job Title" ng-model="job_title" />
       <input type="text" name="tedious_task" placeholder="Tedious Task" ng-model="tedious_task" />
     </article>
@@ -36,9 +36,9 @@
   </section>
 
   <section class="main_content">
-    <p>{{ male_name }} was a {{ job_title }} who loved technology. Although she loved parts of her job, she absolutely hated  {{ tedious_task }} and {{ dirty_task }}. So, {{ male_name }} met with her life mentor {{celebrity}} who told her to learn how to {{ useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ useless_skill }} so she studied programming instead.</p>
+    <p>{{ male_name ? male_name:"________"}} was a {{ job_title ? job_title:"________" }} who loved technology. Although he loved parts of his job, he absolutely hated  {{ tedious_task ? tedious_task:"________" }} and {{ dirty_task ? dirty_task:"________" }}. So, {{ male_name ? male_name:"________" }} met with his life mentor {{celebrity ? celebrity:"________"}} who told him to learn how to {{ useless_skill ? useless_skill:"________" }} with Thinkful. Thinkful didn't offer a course on {{ useless_skill ? useless_skill:"________" }} so he studied programming instead.</p>
  
-    <p>What a great decision! With her new skills, {{ male_name }} built a(n) {{ adjective }} robot named {{ obnoxious_celebrity }} that not only loved {{ dirty_task }} but did it {{ huge_number }} faster.</p>
+    <p>What a great decision! With his new skills, {{ male_name ? male_name:"________" }} built a(n) {{ adjective ? adjective:"________" }} robot named {{ obnoxious_celebrity ? obnoxious_celebrity:"________" }} that not only loved {{ dirty_task ? dirty_task:"________" }} but did it {{ huge_number ? huge_number:"________" }} faster.</p>
   </section>
 
   <footer>
