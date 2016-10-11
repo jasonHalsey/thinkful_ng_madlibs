@@ -1,11 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thinkful Angular ngMadLibs</title>
     <link rel="stylesheet" href="css/index.css">
+    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dosis|Oswald" rel="stylesheet">
   </head>
   <body>
@@ -18,26 +19,26 @@
   </header>
   <section class="input-container">
     <article>
-      <input type="text" name="male_name" placeholder="Male Name" />
-      <input type="text" name="job_title" placeholder="Job Title" />
-      <input type="text" name="tedious_task" placeholder="Tedious Task" />
+      <input type="text" name="male_name" placeholder="Male Name" ng-model="male_name" />
+      <input type="text" name="job_title" placeholder="Job Title" ng-model="job_title" />
+      <input type="text" name="tedious_task" placeholder="Tedious Task" ng-model="tedious_task" />
     </article>
     <article>
-      <input type="text" name="dirty_task" placeholder="Dirty Task" />
-      <input type="text" name="celebrity" placeholder="Celebrity" />
-      <input type="text" name="useless_skill" placeholder="Useless Skill" />
+      <input type="text" name="dirty_task" placeholder="Dirty Task" ng-model="dirty_task" />
+      <input type="text" name="celebrity" placeholder="Celebrity" ng-model="celebrity" />
+      <input type="text" name="useless_skill" placeholder="Useless Skill" ng-model="useless_skill" />
     </article>
     <article>
-      <input type="text" name="obnoxious_celebrity" placeholder="Obnoxious Celebrity" />
-      <input type="text" name="huge_number" placeholder="Huge Number" />
-      <input type="text" name="adjective" placeholder="Adjective" />
+      <input type="text" name="obnoxious_celebrity" placeholder="Obnoxious Celebrity" ng-model="obnoxious_celebrity" />
+      <input type="text" name="huge_number" placeholder="Huge Number" ng-model="huge_number" />
+      <input type="text" name="adjective" placeholder="Adjective" ng-model="adjective" />
     </article>
   </section>
 
   <section class="main_content">
-    <p>{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious task}} and {{dirty task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead.</p>
+    <p>{{ male_name }} was a {{ job_title }} who loved technology. Although she loved parts of her job, she absolutely hated  {{ tedious_task }} and {{ dirty_task }}. So, {{ male_name }} met with her life mentor {{celebrity}} who told her to learn how to {{ useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ useless_skill }} so she studied programming instead.</p>
  
-    <p>What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxiuous celbertity}} that not only loved {{dirty task}} but did it {{huge number}} faster.</p>
+    <p>What a great decision! With her new skills, {{ male_name }} built a(n) {{ adjective }} robot named {{ obnoxious_celebrity }} that not only loved {{ dirty_task }} but did it {{ huge_number }} faster.</p>
   </section>
 
   <footer>
