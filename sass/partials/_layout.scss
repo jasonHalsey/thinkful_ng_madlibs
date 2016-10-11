@@ -1,0 +1,71 @@
+// ============================================
+//  Header
+// ============================================
+header{
+  @include outer-container;
+  div{
+    border: 1px solid #ffba00;
+    padding:0.5em;
+    display:block;
+    float:left;
+  }
+  div.happy{
+    width:25%;
+    text-align: center;
+    height: 180px;
+    padding-top:1.6em;
+    img{
+      width:60%;
+      height:auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  div.logo{
+    width:75%;
+    text-align: center;
+    height: 180px;
+    margin-right: 0;
+    h1{
+      text-transform: capitalize;
+      font-size: 4.0em;
+      font-family: $header-font;
+      margin-bottom: 0;
+    }
+    img{
+      width:40%;
+      height:auto;
+    }
+  }
+}
+
+// ============================================
+//  Form Input Area
+// ============================================
+section.input-container{
+  @include outer-container();
+  padding:2.0em;
+  article{
+    @include span-columns(4);
+    text-align: center;
+  }
+}
+
+// ============================================
+//  Main Content Area
+// ============================================
+section.main_content{
+  @include outer-container();
+  font-family: $body-font;
+  font-size: 1.5em;
+  line-height:2.0em;
+}
+
+// ============================================
+//  Footer
+// ============================================
+footer{
+  min-height: 75px;
+  background-color: $dark-gray;
+  margin-top: 6.0em;
+}
