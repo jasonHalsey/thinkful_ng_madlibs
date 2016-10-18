@@ -298,6 +298,9 @@ section.input-container article {
 section.input-container article:last-child {
   margin-right: 0;
 }
+section.input-container input {
+  color: #bababa;
+}
 
 section.main_content {
   max-width: 960px;
