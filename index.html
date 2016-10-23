@@ -21,8 +21,8 @@
       <h1>Automate this!</h1>
     </div>
   </header>
-  <section class="input-container" ng-hide="myForm.$valid && myForm.$submitted">
-    <form name="myForm" novalidate ng-submit="submit()">
+  <section class="input-container" >
+    <form name="myForm" novalidate ng-submit="vm.submit()">
       <article>
         <input type="text" placeholder="Male Name" ng-model="vm.male_name" name="male_name" required /> 
         <input type="text" name="job_title" placeholder="Job Title" ng-model="vm.job_title" required />
@@ -39,8 +39,10 @@
         <input type="text" name="adjective" placeholder="Adjective" ng-model="vm.adjective" required />
 
         <input type="submit" value="send it" />
+
       </article>
     </form>
+   
   </section>
 
   <section class="main_content test" >
@@ -71,10 +73,11 @@
 
   </section>
 
-  <section class="main_content" ng-show="myForm.$valid && myForm.$submitted" >
+  <section class="main_content"  >
     <p>{{ vm.male_name }} was a {{ vm.job_title }} who loved technology. Although he loved parts of his job, he absolutely hated  {{ vm.tedious_task }} and {{ vm.dirty_task }}. So, {{ vm.male_name }} met with his life mentor {{ vm.celebrity }} who told him to learn how to {{ vm.useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ vm.useless_skill }} so he studied programming instead.</p>
  
     <p>What a great decision! With his new skills, {{ vm.male_name }} built a(n) {{ vm.adjective }} robot named {{ vm.obnoxious_celebrity }} that not only loved {{ vm.dirty_task }} but did it {{ vm.huge_number }} times faster.</p>
+     <button class="button" ng-click="vm.reset()">Reset</button>
   </section>
 
   <footer>
