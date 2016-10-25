@@ -21,22 +21,22 @@
       <h1>Automate this!</h1>
     </div>
   </header>
-  <section class="input-container" >
+  <section class="input-container" ng-hide="myForm.$valid && myForm.$submitted" >
     <form name="myForm" novalidate ng-submit="vm.submit()">
       <article>
-        <input type="text" placeholder="Male Name" ng-model="vm.male_name" name="male_name" required /> 
-        <input type="text" name="job_title" placeholder="Job Title" ng-model="vm.job_title" required />
-        <input type="text" name="tedious_task" placeholder="Tedious Task" ng-model="vm.tedious_task" required />
+        <input type="text" placeholder="Male Name" ng-model="vm.myForm.male_name" name="male_name" required /> 
+        <input type="text" name="job_title" placeholder="Job Title" ng-model="vm.myForm.job_title" required />
+        <input type="text" name="tedious_task" placeholder="Tedious Task" ng-model="vm.myForm.tedious_task" required />
       </article>
       <article>
-        <input type="text" name="dirty_task" placeholder="Dirty Task" ng-model="vm.dirty_task" required />
-        <input type="text" name="celebrity" placeholder="Celebrity" ng-model="vm.celebrity" required />
-        <input type="text" name="useless_skill" placeholder="Useless Skill" ng-model="vm.useless_skill" required />
+        <input type="text" name="dirty_task" placeholder="Dirty Task" ng-model="vm.myForm.dirty_task" required />
+        <input type="text" name="celebrity" placeholder="Celebrity" ng-model="vm.myForm.celebrity" required />
+        <input type="text" name="useless_skill" placeholder="Useless Skill" ng-model="vm.myForm.useless_skill" required />
       </article>
       <article>
-        <input type="text" name="obnoxious_celebrity" placeholder="Obnoxious Celebrity" ng-model="vm.obnoxious_celebrity" required />
-        <input type="text" min="1" name="huge_number" placeholder="Huge Number" ng-model="vm.huge_number" required />
-        <input type="text" name="adjective" placeholder="Adjective" ng-model="vm.adjective" required />
+        <input type="text" name="obnoxious_celebrity" placeholder="Obnoxious Celebrity" ng-model="vm.myForm.obnoxious_celebrity" required />
+        <input type="text" min="1" name="huge_number" placeholder="Huge Number" ng-model="vm.myForm.huge_number" required />
+        <input type="text" name="adjective" placeholder="Adjective" ng-model="vm.myForm.adjective" required />
 
         <input type="submit" value="send it" />
 
@@ -46,37 +46,37 @@
   </section>
 
   <section class="main_content test" >
-    <span class="error" ng-if="myForm.$submitted && myForm.male_name.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.male_name.$error.required">
       A male name is required!
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.job_title.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.job_title.$error.required">
       Please enter a job title
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.tedious_task.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.tedious_task.$error.required">
       Please enter a tedious task
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.dirty_task.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.dirty_task.$error.required">
      Please enter a dirty task
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.celebrity.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.celebrity.$error.required">
       Please enter the name of a celebrity
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.useless_skill.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.useless_skill.$error.required">
       Please enter a useless skill
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.obnoxious_celebrity.$error.required">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.obnoxious_celebrity.$error.required">
       Please enter the name of an obnoxious celebrity
     </span>
-    <span class="error" ng-if="myForm.$submitted && myForm.huge_number.$error.min">
+    <span class="error" ng-if="vm.myForm.$submitted && vm.myForm.huge_number.$error.min">
       Please enter a number
     </span>
 
   </section>
 
-  <section class="main_content"  >
-    <p>{{ vm.male_name }} was a {{ vm.job_title }} who loved technology. Although he loved parts of his job, he absolutely hated  {{ vm.tedious_task }} and {{ vm.dirty_task }}. So, {{ vm.male_name }} met with his life mentor {{ vm.celebrity }} who told him to learn how to {{ vm.useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ vm.useless_skill }} so he studied programming instead.</p>
+  <section class="main_content" ng-show="myForm.$valid && myForm.$submitted" >
+    <p>{{ vm.myForm.male_name }} was a {{ vm.myForm.job_title }} who loved technology. Although he loved parts of his job, he absolutely hated  {{ vm.myForm.tedious_task }} and {{ vm.myForm.dirty_task }}. So, {{ vm.myForm.male_name }} met with his life mentor {{ vm.myForm.celebrity }} who told him to learn how to {{ vm.myForm.useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ vm.myForm.useless_skill }} so he studied programming instead.</p>
  
-    <p>What a great decision! With his new skills, {{ vm.male_name }} built a(n) {{ vm.adjective }} robot named {{ vm.obnoxious_celebrity }} that not only loved {{ vm.dirty_task }} but did it {{ vm.huge_number }} times faster.</p>
+    <p>What a great decision! With his new skills, {{ vm.myForm.male_name }} built a(n) {{ vm.myForm.adjective }} robot named {{ vm.myForm.obnoxious_celebrity }} that not only loved {{ vm.myForm.dirty_task }} but did it {{ vm.myForm.huge_number }} times faster.</p>
      <button class="button" ng-click="vm.reset()">Reset</button>
   </section>
 
